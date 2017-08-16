@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"
+          media="all" />
+    <title>
+        Joke of the day is:
+    </title>
+</head>
+<body>
+<div class="header">
+    <div class="container" th:if="${joke == null}">
+        <strong class="header-heading" >No joke found!</strong> Please retry with another joke.
+    </div>
+    <div class="container" th:if="${joke != null}">
+        <h1 class="header-heading">Chuck Norris said:</h1>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="main" th:text="${joke}">Chuck Norris cannot love, he can only not kill.</div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">&copy; Alex Soft 2017</div>
+</div>
+</body>
+</html>
